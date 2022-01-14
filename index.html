@@ -139,6 +139,14 @@
       }
     }
 
+    funtion getRequest(){
+      liff.permission.query('profile').then(permissionStatus => {
+        if (permissionStatus.state === 'prompt') {
+          liff.permission.requestAll();
+        }
+      });
+    }
+
     async function main() {
       liff.ready.then(() => {
         document.getElementById("isLoggedIn").append(liff.isLoggedIn())
@@ -148,6 +156,7 @@
           getContext()
           getFriendship()
           createUniversalLink()
+          getRequest()
         } else {
           liff.login()
         }
