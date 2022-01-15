@@ -146,9 +146,10 @@
     function getRequest(){
       liff.permission.query('profile').then(permissionStatus => {
         console.log("permissionStatus:",permissionStatus)
+        console.log("permission",liff.permission.requestAll())
         if (permissionStatus.state === 'prompt') {
           liff.permission.requestAll();
-          console.log("permission",liff.permission.requestAll())
+          
         }
       });
     }
