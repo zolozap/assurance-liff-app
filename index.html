@@ -86,8 +86,8 @@
       const friend = await liff.getFriendship()
       document.getElementById("friendship").append(friend.friendFlag)
       if (!friend.friendFlag) {
-        if (confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อน จะเพิ่มเลยไหม?")) {
-          window.location = "https://line.me/R/ti/p/@YOUR-BOT-ID"
+        if (confirm("คุณยังไม่ได้เพิ่ม นวกิจประกันภัย เป็นเพื่อน จะเพิ่มเลยไหม?")) {
+          window.location = "https://line.me/R/ti/p/@nkiservice"
         }
       }
     }
@@ -118,6 +118,7 @@
     async function getUserProfile() {
       const profile = await liff.getProfile()
       console.log(profile)
+      console.log(liff.getDecodedIDToken())
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
