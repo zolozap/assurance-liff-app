@@ -45,7 +45,7 @@
   <script>
     function createUniversalLink() {
       const link1 = liff.permanentLink.createUrl()
-      document.getElementById("universalLink1").append(link1)
+      document.getElementById("universalLink1").append(`<a href='${link1}'>${link1}</a>`)
       
       liff.permanentLink.setExtraQueryParam('param=9')
       const link2 = liff.permanentLink.createUrl()
