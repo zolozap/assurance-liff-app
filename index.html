@@ -24,7 +24,7 @@
   <p id="friendship"><b>isFriendship:</b> </p>
   <p id="scanCode"><b>Code:</b> </p>
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
-  <p id="universalLink1"><b>Universal Link:</b> </p>
+  <p><b>Universal Link:</b> <a id="universalLink1"></a> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
 
@@ -45,11 +45,12 @@
   <script>
     function createUniversalLink() {
       const link1 = liff.permanentLink.createUrl()
-      document.getElementById("universalLink1").append(`<a href='${link1}'>${link1}</a>`)
-      
+      document.getElementById("universalLink1").href(`${link1}`)
+      document.getElementById("universalLink1").append(`${link1}`)
+
       liff.permanentLink.setExtraQueryParam('param=9')
       const link2 = liff.permanentLink.createUrl()
-      document.getElementById("universalLink2").append(`<a href='${link2}'>${link2}</a>`)
+      document.getElementById("universalLink2").append(`${link2}`)
     }
 
     async function shareMsg() {
