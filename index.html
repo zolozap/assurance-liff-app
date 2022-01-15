@@ -84,6 +84,7 @@
 
     async function getFriendship() {
       const friend = await liff.getFriendship()
+      console.log(friend)
       document.getElementById("friendship").append(friend.friendFlag)
       if (!friend.friendFlag) {
         if (confirm("คุณยังไม่ได้เพิ่ม นวกิจประกันภัย เป็นเพื่อน จะเพิ่มเลยไหม?")) {
