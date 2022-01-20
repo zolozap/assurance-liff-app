@@ -109,7 +109,7 @@
     async function sendMsg() {
       console.log(liff.getContext().type)
       if (liff.getContext().type !== "none") {
-        await liff.sendMessages([
+        liff.sendMessages([
           {
             "type": "imagemap",
             "baseUrl": "https://sv1.picz.in.th/images/2022/01/17/nq60og.png?w=auto",
@@ -172,6 +172,12 @@
             ]
           }
         ])
+        .then(() => {
+          console.log('message sent');
+        })
+        .catch((err) => {
+          console.log('error', err);
+        })
         alert('message sent.')
       }
     }
